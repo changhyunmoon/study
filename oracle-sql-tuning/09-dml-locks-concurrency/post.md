@@ -125,3 +125,5 @@ AND    version = :read_version;
 - 운영 중 `enq: TX - row lock contention` 대기가 보이면 `V$SESSION.BLOCKING_SESSION`으로 Lock을 쥔 세션과 SQL을 찾는다.
 
 이 시리즈는 인덱스로 테이블을 찾아가는 비용에서 시작해 조인, 소트, 그리고 DML과 Lock까지 왔다. DML 편 세 글을 하나로 묶으면, DML의 비용은 블록을 바꾸며 남기는 기록(Redo·Undo), 그 일을 반복하며 오가는 호출, 그리고 그동안 다른 트랜잭션을 세워 두는 Lock 세 가지다.
+
+다음 글에서는 시선을 SQL 바깥으로 넓혀, 지금까지의 설명이 모두 기대고 있던 무대인 오라클 인스턴스의 메모리 구조(SGA, PGA)와 백그라운드 프로세스, 그리고 논리 I/O와 물리 I/O의 관계를 정리한다.
